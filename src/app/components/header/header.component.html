@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light pt-3 fixed-top">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/"> RemotePlatz </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- <button id="login" *ngIf="!userIsAuthenticated" type="button" class="btn-outline ms-auto login"
+                routerLink="/login">
+                Login
+            </button> -->
+
+            <button *ngIf="userIsAuthenticated" type="button" class="btn ms-auto btn-danger btn-block"
+                (click)="onLogout()"  routerLink="/login">
+                Logout
+            </button>
+
+        </div>
+    </div>
+</nav>

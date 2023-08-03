@@ -1,0 +1,63 @@
+.container {
+  padding-top: 7rem;
+  padding-bottom: 50px;
+}
+.btn {
+  background-color: #d1dff2;
+  color: #1966d2;
+}
+.btn:hover {
+  background-color: #90b6eb;
+  color: #1966d2;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  line-height: 3.125rem;
+  letter-spacing: normal;
+}
+.content {
+  background-color: #eff4fc;
+}
+.search input {
+  width: 100px;
+  height: 40px;
+}
+.filter {
+  display: flex;
+  align-items: center;
+}
+.filter ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.active a {
+  background-color: #1966d2;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+h3 {
+  font-size: 1.2rem;
+}
+.days {
+  padding-left: 15px;
+}
+.flag {
+  margin-right: 5px;
+}
+.view {
+  background-color: #d1cae4;
+  color: #754afd;
+}
+.view:hover {
+  background-color: #c7baeb;
+  color: #754afd;
+}
+@media only screen and (max-width: 600px) {
+  .search input {
+    width: 100px;
+    height: 40px;
+  }
+}

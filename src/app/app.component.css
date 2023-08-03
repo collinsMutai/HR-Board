@@ -1,0 +1,12 @@
+body{
+    background-color: #000;
+}
+.navbar-brand {
+  color: #754afd;
+}
+.login {
+  border: 1px solid #754afd;
+  color: #754afd;
+  padding: 5px;
+  width: 80px;
+}

@@ -1,0 +1,35 @@
+.container {
+  padding-top: 7rem;
+  padding-bottom: 50px;
+}
+.flag {
+  margin-right: 5px;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272332;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 15px 0 15px;
+}
+.btn {
+  background-color: #edf0f0;
+  color: #1b67d2;
+  margin-right: 10px;
+}
+.btn:hover {
+  background-color: #edf0f0;
+  color: #1b67d2;
+}
+#apply {
+  background-color: #754afd;
+  color: #fff;
+  width: 350px;
+  text-transform: uppercase;
+}
+#apply:hover {
+  background-color: #c7baeb;
+  color: #754afd;
+}

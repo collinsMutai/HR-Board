@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="container">
+    <div class="content">
+        <h1>{{job.title}} </h1>
+        <p><span class="{{job.flag}}"></span> {{job.location}}</p>
+        <div class="bar">
+            <p>40hr/week
+            </p>
+            <p>Starts ASAP
+            </p>
+            <p>GMT +03:00
+            </p>
+        </div>
+        <div class="search d-flex mt-4">
+            <button type="button" class="btn">Java</button>
+            <button type="button" class="btn">Spring Boot
+            </button>
+          </div>
+          <p class="mt-5">We are looking for an experienced Full-stack JavaScript Developer to work Remotely with a fast-growing from Netherlands.
+        </p>
+          <h5 class="mt-5">About the company:</h5>
+          <p>{{job.about}}</p>
+          <p>{{job.stack}}</p>
+          <h5 class="mt-3">Requirements:</h5>
+       <ul *ngFor="let item of job.requirements">
+        <li>{{item}}</li>
+       </ul>
+       <div class="d-flex justify-content-between align-middle mt-5">
+
+         <button type="submit"  id="apply"   class="btn"  (click)="onLogin(job.id)">Apply</button>
+         <p>2 days ago</p>
+       </div>
+    </div>
+</div>

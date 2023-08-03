@@ -1,0 +1,59 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+  <h1>Remote jobs for developers</h1>
+  <div class="search d-flex mt-3">
+    <button type="button" class="btn">Active</button>
+    <input
+      id="inputId"
+      class="form-control ms-auto"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      type="text"
+      [(ngModel)]="filterText"
+      (ngModelChange)="clearFilter()"
+    />
+  </div>
+  <div class="mt-5">
+    <div class="content p-3">
+      <div class="filter">
+        <p>Sort By</p>
+        <ul>
+          <li
+            *ngFor="let n of list"
+            (click)="select(n)"
+            [ngClass]="{ active: isActive(n) }"
+          >
+            <a>{{ n }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card mt-5">
+    <div
+      class="card-body"
+      *ngFor="let job of jobs | filter: filterText | filtertitle: filterTitle"
+    >
+      <h3>
+        {{ job.title }}
+      </h3>
+      <p>
+        <span class="{{ job.flag }}"></span> {{ job.location }}
+        <span class="days">{{ job.date }}</span>
+      </p>
+      <div class="time d-flex justify-content-between">
+        <p>{{ job.time }}</p>
+        <button
+          type="button"
+          class="btn view"
+          (click)="getId(job.id)"
+          routerLink="/about"
+        >
+          View
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
