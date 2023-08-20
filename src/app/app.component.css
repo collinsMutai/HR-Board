@@ -1,12 +1,43 @@
-body{
-    background-color: #000;
+header {
+  position: relative;
+  padding: 0 2rem;
+  background-color: #754afd;
 }
-.navbar-brand {
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+.navbar .logo a:hover {
+  color: #c7baeb;
+}
+
+.action_btn {
+  background-color: #fff;
+  color: #754afd;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 sec;
+  text-decoration: none;
+}
+.action_btn:hover {
+  scale: 1.05;
   color: #754afd;
 }
-.login {
-  border: 1px solid #754afd;
-  color: #754afd;
-  padding: 5px;
-  width: 80px;
+.action_btn:active {
+  scale: 0.95;
 }

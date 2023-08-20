@@ -1,10 +1,15 @@
 <div class="container">
-   <h2>Application for {{Job.title}}</h2>
-   <form action="">
-    <input type="text">
-    <input type="text">
-    <button>Apply</button>
-   </form>
+  <h2>Application for {{ Job.title }}</h2>
+  <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Name" formControlName="name" />
+    <input type="email" placeholder="Email" formControlName="email" />
+
+    <textarea
+      placeholder="message"
+      rows="5"
+      formControlName="message"
+    ></textarea>
+
+    <button type="submit">Apply</button>
+  </form>
 </div>
-
-

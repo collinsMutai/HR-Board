@@ -1,4 +1,3 @@
-<!-- <app-header></app-header> -->
 <div class="container">
   <h1>Remote jobs for developers</h1>
   <div class="search d-flex mt-3">
@@ -33,7 +32,7 @@
   <div class="card mt-5">
     <div
       class="card-body"
-      *ngFor="let job of jobs | filter: filterText | filtertitle: filterTitle"
+      *ngFor="let job of jobs | filter : filterText | filtertitle : filterTitle"
     >
       <h3>
         {{ job.title }}
@@ -56,4 +55,3 @@
     </div>
   </div>
 </div>
-

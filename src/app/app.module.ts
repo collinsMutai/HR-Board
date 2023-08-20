@@ -4,7 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
-
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { BtnstyleDirective } from './Directives/btnstyle.directive';
@@ -18,7 +17,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApplyComponent } from './apply/apply.component';
 import { environment } from 'src/environments/environment';
-import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +29,6 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     RegisterComponent,
     ApplyComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JobsService } from '../Service/jobs.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-apply',
@@ -8,21 +10,36 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./apply.component.css'],
 })
 export class ApplyComponent implements OnInit {
+  userIsAuthenticated = false;
+  private authListenerSubs!: Subscription;
+  form!: FormGroup;
   id!: any;
   Job!: any;
+
   constructor(private jobService: JobsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.id = localStorage.getItem('param')
- 
+    this.authListenerSubs = this.jobService
+      .getAuthStatusListener()
+      .subscribe((isAuthenticated) => {
+        console.log(isAuthenticated);
+        this.userIsAuthenticated = isAuthenticated;
+      });
     
-    // this.route.params.subscribe((param) => {
-    //   this.id = param['id']
-    //   console.log(this.id);
+    this.form = new FormGroup({
+      name: new FormControl(null, [Validators.required]),
+
+      message: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+    });
+
+    this.id = localStorage.getItem('param');
+
     this.Job = this.jobService.getJob(this.id);
     console.log(this.Job);
-    
-      
-    // })
+  }
+
+  onSubmit() {
+    this.jobService.apply(this.form.value).subscribe((result) => {});
   }
 }
