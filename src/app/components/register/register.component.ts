@@ -3,7 +3,6 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { JobsService } from '../../Service/jobs.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,6 +18,5 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.JobsService.createUser(form.value.email, form.value.password);
-    this.router.navigate(['/'])
   }
 }

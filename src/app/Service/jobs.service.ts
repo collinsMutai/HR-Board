@@ -55,6 +55,11 @@ export class JobsService {
     this.http.post(BACKEND_URL + 'register', userData).subscribe(
       (response) => {
         console.log(response);
+        
+         this.returnUrl =
+           this.route.snapshot.queryParams['returnUrl'] ||
+           `/apply/${this.userId}`;
+         this.router.navigateByUrl(this.returnUrl);
       },
       (error) => {
         this.authStatusListener.next(false);
@@ -78,7 +83,7 @@ export class JobsService {
 
           if (token) {
             const expiresInDuration = response.expiresIn;
-            console.log(expiresInDuration);
+            
             this.setAuthTimer(expiresInDuration);
 
             this.isAuthenticated = true;
@@ -88,7 +93,7 @@ export class JobsService {
             const expirationDate = new Date(
               now.getTime() + expiresInDuration * 1000
             );
-            console.log(expirationDate);
+           
             this.saveAuthData(token, expirationDate, this.userId);
 
             this.returnUrl =
